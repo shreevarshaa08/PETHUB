@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PetHub – Care that wags</title>
+<meta name="description" content="PetHub: pet services, a fun Pet Lab, vaccine reminders and emergency help in one place.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="bar"><a class="logo" href="#home">🐾 PetHub</a><nav id="nav"></nav></div></header>
+<main>
+<section class="page" id="home">
+<div class="hero"><span class="fl f1">🐶</span><span class="fl f2">🐱</span><span class="fl f3">🐰</span><span class="fl f4">🦜</span>
+<h1>Care that makes tails wag</h1>
+<p>Vets, grooming, spa days, pet taxi and more. Plus a Pet Lab, vaccine reminders and 24/7 SOS tips.</p>
+<a class="btn acc" href="#services">Explore services</a> <a class="btn ghost light" href="#lab">Try the Pet Lab</a></div>
+<div class="fact"><b>🐾 Pet fact of the day</b><p id="fact" style="margin:6px 0 0"></p></div>
+<h2>Popular services</h2><div class="grid" id="featGrid"></div>
+<h2>Why PetHub?</h2>
+<div class="grid">
+<div class="card"><div class="ic">⏰</div><h3>Vaccine reminders</h3><p>Add your pet once and we show when the next dose is due.</p></div>
+<div class="card"><div class="ic">🧪</div><h3>Pet Lab</h3><p>Match quiz, age calculator and a food safety checker.</p></div>
+<div class="card"><div class="ic">🚨</div><h3>SOS button</h3><p>Emergency first-aid tips and our hotline, one tap away.</p></div>
+</div>
+</section>
+
+<section class="page" id="services">
+<h2 style="margin-top:0">Our services</h2>
+<input id="q" placeholder="🔍 Search services (e.g. spa, vaccine, taxi)…">
+<div class="grid" id="svcGrid" style="margin-top:14px"></div>
+</section>
+
+<section class="page" id="lab">
+<h2 style="margin-top:0">🧪 Pet Lab</h2>
+<div class="card"><h3 style="margin-top:0">🎯 Find your pet’s perfect service</h3><div id="quiz"></div></div>
+<div class="card" style="margin-top:14px"><h3 style="margin-top:0">🎂 Pet age calculator</h3>
+<div class="grid"><div><label for="at">Pet</label><select id="at"><option>Dog</option><option>Cat</option></select></div>
+<div><label for="ay">Age (years)</label><input id="ay" type="number" min="0" max="30" step="0.5"></div></div>
+<div class="row"><button class="btn" onclick="calcAge()">Calculate</button></div>
+<p id="aout" style="margin-bottom:0"></p><small style="color:var(--muted)">Approximate. Every pet ages differently.</small></div>
+<div class="card" style="margin-top:14px"><h3 style="margin-top:0">🍎 Can my pet eat this?</h3>
+<input id="fq" placeholder="Search a food (e.g. chocolate, carrot)…"><div id="foods" style="margin-top:10px"></div>
+<small style="color:var(--muted)">General guide only. If your pet ate something harmful, call a vet at once.</small></div>
+</section>
+
+<section class="page" id="about">
+<h2 style="margin-top:0">About PetHub</h2>
+<div class="card"><p style="margin:0">PetHub brings veterinary care, grooming, spa days, training and travel for pets into one friendly place. We believe every pet deserves gentle care and every owner deserves clear prices, simple booking and peace of mind.</p></div>
+<div class="grid" style="margin-top:14px">
+<div class="card"><div class="ic">💜</div><h3>Gentle care</h3><p>Fear-free handling for every visit.</p></div>
+<div class="card"><div class="ic">🔍</div><h3>Clear prices</h3><p>No surprises. Pay at the clinic.</p></div>
+<div class="card"><div class="ic">📲</div><h3>Easy booking</h3><p>Pick a service and time in seconds.</p></div>
+</div>
+<h2>Meet the team</h2>
+<div class="grid">
+<div class="card"><div class="ic">🩺</div><h3>Dr. Maya Rao</h3><p>Lead veterinarian</p></div>
+<div class="card"><div class="ic">✂️</div><h3>Leo Martin</h3><p>Head groomer</p></div>
+<div class="card"><div class="ic">🎓</div><h3>Sara Khan</h3><p>Trainer</p></div>
+</div>
+</section>
+
+<section class="page" id="contact">
+<h2 style="margin-top:0">Contact us</h2>
+<div class="grid">
+<div class="card"><div class="ic">📍</div><h3>Visit</h3><p>12 Paw Street, Petville</p></div>
+<div class="card"><div class="ic">📞</div><h3>Call</h3><p>+1 (555) 010-2020<br>Mon–Sat, 8am–7pm</p></div>
+<div class="card"><div class="ic">✉️</div><h3>Email</h3><p>hello@pethub.com</p></div>
+</div>
+<div class="card" style="margin-top:16px"><h3 style="margin-top:0">Send us a message</h3>
+<label for="cn">Name</label><input id="cn"><label for="ce">Email</label><input id="ce" type="email"><label for="cm">Message</label><textarea id="cm" rows="4"></textarea>
+<div class="msg" id="cerr"></div><div class="row"><button class="btn" onclick="sendContact()">Send message</button></div>
+<div class="ok" id="cok" style="display:none;margin-top:14px">Thanks! We’ll reply within one business day. 🐾</div></div>
+</section>
+
+<section class="page" id="account"><div id="acct"></div></section>
+</main>
+<button id="sos" onclick="sos()" aria-label="Emergency help">🚨 SOS</button>
+<dialog id="dlg"></dialog><div id="toast"></div>
+<footer>© 2026 pethub.com · Demo site: data stays in your browser.</footer>
+<script src="script.js" defer></script>
+</body>
+</html>
